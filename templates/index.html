@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Art Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='hero-image.jpg') }}" alt="Artistic Banner" class="hero-image">
+        <h1>ABSTRACT ART SIMILAR IMAGES</h1>
+    </header>
+    <main>
+        <form action="{{ url_for('stylize') }}" method="post" enctype="multipart/form-data">
+            <div class="upload-container">
+                <div class="upload-item">
+                    <label for="content_image">content image</label>
+                    <input type="file" name="content_image" id="content_image" required>
+                </div>
+                <div class="upload-item">
+                    <label for="style_image">style image</label>
+                    <input type="file" name="style_image" id="style_image" required>
+                </div>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+        {% if content_image_url and stylized_image_url %}
+        <div class="result-container">
+            <div class="image-item">
+                <h2>Content Image</h2>
+                <img src="{{ content_image_url }}" alt="Content Image">
+            </div>
+            <div class="image-item">
+                <h2>Stylized Image</h2>
+                <img src="{{ stylized_image_url }}" alt="Stylized Image">
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</body>
+</html>
