@@ -19,6 +19,7 @@ Hosting the Application Locally:
 1. Ensure all dependencies are installed. You need Flask, TensorFlow, TensorFlow Hub, NumPy, PIL, and OS. Install them via your system's terminal or an IDE terminal.
 
 2. Navigate to the folder containing the static folder, templates folder, and app.py. The folder structure should look like this:
+
 project-folder/
 ├── static/...
 
