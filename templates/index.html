@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Art Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='hero-image.jpg') }}" alt="Artistic Banner" class="hero-image">
+        <h1>ABSTRACT ART SIMILAR IMAGES</h1>
+    </header>
+    <main>
+        <form action="{{ url_for('stylize') }}" method="post" enctype="multipart/form-data">
+            <div class="upload-container">
+                <div class="upload-item">
+                    <label for="content_image">Content Image</label>
+                    <input type="file" name="content_image" id="content_image" required>
+                </div>
+                <div class="upload-item">
+                    <label for="style_image">Style Image</label>
+                    <input type="file" name="style_image" id="style_image" required>
+                </div>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+        <div class="additional-image-container">
+            <img src="{{ url_for('static', filename='additional-image.jpg') }}" alt="Additional Banner" class="additional-image">
+            {% if content_image_url and style_image_url and stylized_image_url %}
+            <div class="result-container">
+                <div class="image-item">
+                    <img src="{{ content_image_url }}" alt="Content Image">
+                    <h2>Content Image</h2>
+                </div>
+                <div class="image-item">
+                    <img src="{{ stylized_image_url }}" alt="Stylized Image">
+                    <h2>Stylized Image</h2>
+                </div>
+                <div class="image-item">
+                    <img src="{{ style_image_url }}" alt="Style Image">
+                    <h2>Style Image</h2>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
