@@ -21,10 +21,9 @@ Hosting the Application Locally:
 2. Navigate to the folder containing the static folder, templates folder, and app.py. The folder structure should look like this:
 
 project-folder/
-├── static/...
 
+    ├── static/...
     ├── templates/...
-
     └── app.py
 
 3. Run the following command in your terminal: python app.py
