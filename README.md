@@ -22,8 +22,8 @@ Hosting the Application Locally:
 project-folder/
 ├── static/...
 
-├── templates/...
+    ├── templates/...
 
-└── app.py
+    └── app.py
 
 3. Run the following command in your terminal: python app.py
