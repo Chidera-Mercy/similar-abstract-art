@@ -28,3 +28,5 @@ Hosting the Application Locally:
                   └── app.py
 
 3. Run the following command in your terminal: python app.py
+
+Link to demo of the wed app: https://youtu.be/mlNnCAqzkj0?si=TvkFOSxO2KIVlxIo
